@@ -1,0 +1,7 @@
+{
+  "name": "ViewOptic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
