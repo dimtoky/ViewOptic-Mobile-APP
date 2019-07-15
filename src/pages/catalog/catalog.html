@@ -1,0 +1,79 @@
+<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content style="text-align: center;">
+        <h1 style="text-align: center;">Filtres</h1>
+         
+                <ion-label >Genres</ion-label>
+                          <button ion-button (click)="filterGender('Femmes')">Femme</button>
+                         <button ion-button (click)="filterGender('Hommes')">Homme</button>
+                        <button ion-button (click)="filterGender('Unisexe')">Unisexe</button>
+                 
+                 
+                
+                      <ion-label style="text-align: center;">Formes</ion-label>
+                             <button ion-button (click)="filterForme('Rondes')">Rondes</button>
+                               <button ion-button (click)="filterForme('Carrées')">Carrées</button>
+                
+                 
+                      <ion-label style="text-align: center;">Tailles</ion-label>
+                     <button ion-button (click)=" filterSize('Grande')">Grande</button>
+                              <button ion-button (click)=" filterSize('Moyenne')">Moyenne</button>
+                               <button ion-button (click)=" filterSize('Petite')">Petite</button>
+
+                               <ion-label style="text-align: center;">Marques</ion-label>
+                                  <button ion-button *ngFor="let brand of brands" (click)=" filterBrand(brand['bname'])">{{brand['bname']}}</button>
+                               
+                               
+                                        
+                  
+                 
+    </ion-content>
+  </ion-menu>
+
+<ion-header>
+  <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only (click)="backMenu()">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>
+      Catalogue
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content  #content padding>
+  
+
+    <button ion-button menuToggle *ngIf="statue == true">Filtrer la recherche</button>
+
+      <ion-grid>
+          <ion-row>
+              <ion-col col-12 *ngIf="statue == false " style="text-align: center;"> <h1>Désolé il y'a un soucis, nous n'arrivons pas à charger le catalogue </h1><h2 style="font-size: 50px;">:(</h2></ion-col>
+              <ion-col col-12 *ngIf="statue == true && productData == 0 " style="text-align: center;"> <h1>Aucun produit ne correspond à votre sélection</h1></ion-col>
+              <ion-col col-12 *ngFor="let item of productData">
+  <ion-card  (click)="pushProduct(item)">
+    <img  src="http://viewoptic.servehttp.com:4380/api/products/img/{{item['imgPath1']}}"/>
+    <ion-card-content class="contentCard" style="text-align: center;">
+      <ion-card-title>
+        {{item['pname']}}
+        </ion-card-title>
+        <p>
+           <span class="price">{{item['price']}}</span>  Da
+        </p>
+      <p>
+          {{item['description']}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  </ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

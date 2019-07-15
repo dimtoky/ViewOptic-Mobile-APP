@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons start>
+          <button ion-button icon-only (click)="backMenu()">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>
+      Configurateur
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Configurer mes Verres/Lentilles</h1><br>
+  <p id="description">Le configurateur vous permet de choisir vous mémes les différents composants de vos verres ou lentilles de
+    contact. </p>
+    <br>
+    <ion-grid>
+        <ion-row *ngIf="style" >
+            <ion-col col-12>
+  <ion-card  (click)="openGlassTab()">
+    <ion-card-header>
+      Verres correcteurs
+    </ion-card-header>
+
+    <ion-card-content>
+      
+      <ion-img width="80" height="39" src="assets/imgs/glass.jpg"></ion-img>
+      <p>
+        Nos verres sont soigneusement sélectionnés afin de vous procurez un confort de port optimale et une correction précise.
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+
+<ion-col col-12>
+  <ion-card  (click)="openLensTab()">
+    <ion-card-header>
+      Lentilles de contactes
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img width="80" height="40" src="assets/imgs/lentcont.png"></ion-img>
+      <p>
+      Nos lentilles de contactes de dernières générations répondent à des normes internationales.
+    </p><br>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+</ion-row>
+
+<ion-row *ngIf="!style" >
+    <ion-col col-6>
+<ion-card  (click)="openGlassTab()">
+<ion-card-header>
+Verres correcteurs
+</ion-card-header>
+
+<ion-card-content>
+  <br>
+<ion-img width="160" height="80" src="assets/imgs/glass.jpg"></ion-img>
+<br>
+<p>
+Nos verres sont soigneusement sélectionnés afin de vous procurez un confort de port optimale et une correction précise.
+</p>
+</ion-card-content>
+</ion-card>
+</ion-col>
+
+<ion-col col-6>
+<ion-card  (click)="openLensTab()">
+<ion-card-header>
+Lentilles de contactes
+</ion-card-header>
+<ion-card-content>
+    <br>
+<ion-img width="160" height="80" src="assets/imgs/lentcont.png"></ion-img>
+<br>
+<p>
+Nos lentilles de contactes de dernières générations répondent à des normes internationales.
+</p><br>
+</ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
+
+</ion-grid>
+
+</ion-content>

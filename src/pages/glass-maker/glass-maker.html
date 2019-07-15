@@ -1,0 +1,799 @@
+<!--
+  Generated template for the GlassMakerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+     
+    <ion-title>Configurateur Verres</ion-title>
+
+    <ion-buttons end>
+        <button ion-button icon-only (click)="backMenu()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    
+  <ion-slides>
+
+
+    <!--Page InfoPerso-->
+
+    <!-- <ion-slide>
+      <h1>Informations Personnelles</h1>
+      <br><br>
+
+
+      <ion-item>
+        <ion-label>Civilité</ion-label>
+        <ion-select okText="OK" cancelText="Annuler" [(ngModel)]="gender" text-center>
+          <ion-option value="Femme">Femme</ion-option>
+          <ion-option value="Homme">Homme</ion-option>
+        </ion-select>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Nom</ion-label>
+        <ion-input text-center type="text" [(ngModel)]="fname" value="test"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Prénom</ion-label>
+        <ion-input text-center type="text" [(ngModel)]="lname"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Age</ion-label>
+        <ion-input text-center type="number" [(ngModel)]="age"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Téléphone</ion-label>
+        <ion-input text-center type="tel" [(ngModel)]="tel"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Adresse</ion-label>
+        <ion-input text-center type="text" [(ngModel)]="adresse"></ion-input>
+      </ion-item>
+
+
+
+      <br><br>
+      <button ion-button (click)="next()">Suivant</button>
+    </ion-slide>-->
+    <!--Page InfoPerso FIN-->
+
+
+
+    <!--Page Focalité -->
+    <ion-slide>
+       
+      <h1>Focalité des verres</h1>
+      <button ion-button style= "background-color: #000000;">Total : {{devis}} Da</button>
+      <br><br><br><br>
+
+
+      <ion-list>
+        <ion-card class="lenscard" (click)="choixFocal(1)" style="background-color: #E2D1C3 ;" *ngIf="focalite==1">
+          <ion-card-header>
+            <b> Verres Simples </b>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>
+              Ces verres corrigent tous les défauts visuels hormis la presbytie : myopie, hypermétropie, astigmatisme.
+              Leur forme varie en fonction du problème de vue concerné.
+            </p>
+            <p style="font-weight: bold;">A partir de 3400 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixFocal(1)" *ngIf="focalite!=1">
+          <ion-card-header>
+            <b> Verres Simples </b>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>
+              Ces verres corrigent tous les défauts visuels hormis la presbytie : myopie, hypermétropie, astigmatisme.
+              Leur forme varie en fonction du problème de vue concerné.
+            </p>
+            <p style="font-weight: bold;">A partir de 3400 Da</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="lenscard" (click)="choixFocal(2)" style="background-color: #E2D1C3 ;" *ngIf="focalite==2">
+          <ion-card-header>
+            <b>Verres Progressifs</b>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>
+              Ces verres corrigent la presbytie. Très pratiques, ils permettent de bien voir de près comme de loin. Ils
+              évitent ainsi le recours à une seconde paire de lunettes.
+            </p>
+            <p style="font-weight: bold;">A partir de 14000 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixFocal(2)" *ngIf="focalite!=2">
+          <ion-card-header>
+            <b>Verres Progressifs</b>
+          </ion-card-header>
+
+          <ion-card-content>
+
+            <p>
+              Ces verres corrigent la presbytie. Très pratiques, ils permettent de bien voir de près comme de loin. Ils
+              évitent ainsi le recours à une seconde paire de lunettes.
+            </p>
+            <p style="font-weight: bold;">A partir de 14000 Da</p>
+          </ion-card-content>
+        </ion-card>
+
+
+      </ion-list>
+    </ion-slide>
+    <!--Page Focalité FIN-->
+
+    <!--Page Correction Info -->
+    <ion-slide>
+      <h1>Votre Correction</h1>
+
+
+      <ion-list>
+        <p>Votre ordonnance permet de transmettre des informations bien précises à votre opticien. Pour bien comprendre
+          le sens des indications qui s'y trouvent, suivez ce guide :</p>
+
+          
+        <h4>Les chiffres vous indiquent la valeur de votre correction :</h4>
+      
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+                <ul style="text-align: left;">
+                    <li>OD : Œil droit</li>
+                    <li>OG : Œil Gauche</li>
+                    <li>ODG : Œil Droit et Œil Gauche</li>
+                  </ul>
+            </ion-col>
+            <ion-col col-6>
+                <ul style="text-align: left;">
+                    <li>VL : Vision de Loin</li>
+                    <li>VP : Vision de Près</li>
+                  </ul>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+       
+
+        <p style="font-weight: bold;"><span style="color: red;">Attention : </span> Le prix des verres peut varier en fonction de votre
+          correction.</p>
+      </ion-list>
+      <button ion-button (click)="prev()">Précédent</button>
+      <button ion-button (click)="next()">Suivant</button>
+    </ion-slide>
+    <!--Page Correction Info FIN-->
+
+    <!--Page Correction -->
+    <ion-slide *ngIf="simple">
+      <h1>Correction</h1>
+
+
+
+
+      <h3>Oeil Droit</h3>
+      <ion-item>
+        <ion-label fixed>Sphére</ion-label>
+        <ion-input type="number" [(ngModel)]="sphered"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Axe</ion-label>
+        <ion-input type="number" [(ngModel)]="axed"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Cylindre</ion-label>
+        <ion-input type="number" [(ngModel)]="cylindred"></ion-input>
+      </ion-item>
+
+      <h3>Oeil Gauche</h3>
+      <ion-item>
+        <ion-label fixed>Sphére</ion-label>
+        <ion-input type="number" [(ngModel)]="sphereg"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Axe</ion-label>
+        <ion-input type="number" [(ngModel)]="axeg"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Cylindre</ion-label>
+        <ion-input type="number" [(ngModel)]="cylindreg"></ion-input>
+      </ion-item>
+      <br>
+
+
+      <button ion-button (click)="prev()">Précédent</button>
+      <button ion-button (click)="next()">Suivant</button>
+    </ion-slide>
+    <!--Page Correction FIN-->
+
+
+    <!--Page Correction Loin-->
+    <ion-slide *ngIf="!simple">
+      <h1>Correction</h1>
+      <h2>Vue de Loin</h2>
+
+
+
+
+      <h3>Oeil Droit</h3>
+
+      <ion-item>
+        <ion-label fixed>Sphére</ion-label>
+        <ion-input type="number" [(ngModel)]="spheredL"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Axe</ion-label>
+        <ion-input type="number" [(ngModel)]="axedL"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Cylindre</ion-label>
+        <ion-input type="number" [(ngModel)]="cylindredL"></ion-input>
+      </ion-item>
+
+
+      <h3>Oeil Gauche</h3>
+
+      <ion-item>
+        <ion-label fixed>Sphére</ion-label>
+        <ion-input type="number" [(ngModel)]="spheregL"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Axe</ion-label>
+        <ion-input type="number" [(ngModel)]="axegL"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Cylindre</ion-label>
+        <ion-input type="number" [(ngModel)]="cylindregL"></ion-input>
+      </ion-item>
+      <br>
+
+
+      <button ion-button (click)="prev()">Précédent</button>
+      <button ion-button (click)="next()">Suivant</button>
+    </ion-slide>
+    <!--Page Correction Loin FIN-->
+
+
+    <!--Page Correction Près -->
+    <ion-slide *ngIf="!simple">
+      <h1>Correction</h1>
+      <h2>Vue de Près</h2>
+
+
+
+
+      <h3>Oeil Droit</h3>
+      <ion-item>
+        <ion-label fixed>Sphére</ion-label>
+        <ion-input type="number" [(ngModel)]="spheredP"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Axe</ion-label>
+        <ion-input type="number" [(ngModel)]="axedP"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Cylindre</ion-label>
+        <ion-input type="number" [(ngModel)]="cylindredP"></ion-input>
+      </ion-item>
+
+      <h3>Oeil Gauche</h3>
+      <ion-item>
+        <ion-label fixed>Sphére</ion-label>
+        <ion-input type="number" [(ngModel)]="spheregP"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Axe</ion-label>
+        <ion-input type="number" [(ngModel)]="axegP"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label fixed>Cylindre</ion-label>
+        <ion-input type="number" [(ngModel)]="cylindregP"></ion-input>
+      </ion-item>
+      <br>
+
+      <button ion-button (click)="prev()">Précédent</button>
+      <button ion-button (click)="next()">Suivant</button>
+
+    </ion-slide>
+    <!--Page Correction Prés FIN-->
+
+
+
+    <!--Page Matiére -->
+    <ion-slide>
+        <ion-fab top left>
+            <button ion-fab (click)="prev()" style="background-color:#000000; width:40px; height:40px;" > <ion-icon name="arrow-back"></ion-icon></button>
+          </ion-fab>
+      <h1>Matiére des verres</h1>
+      <button ion-button style= "background-color: #000000;">Total : {{devis}} Da</button>
+      <br><br><br><br><br>
+
+
+      <ion-list>
+        <ion-card class="lenscard" (click)="choixMatiere(1)" style="background-color: #E2D1C3 ;"
+          *ngIf="matiere==1">
+          <ion-card-header>
+            <b> Verre Organique </b>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>
+              L'organique est le matériau le plus répandu de par sa légèreté et sa bonne résistance aux chocs.
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 2000 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 0 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixMatiere(1)" *ngIf="matiere!=1">
+          <ion-card-header>
+            <b> Verre Organique </b>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>
+              L'organique est le matériau le plus répandu de par sa légèreté et sa bonne résistance aux chocs.
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 2000 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 0 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixMatiere(2)" style="background-color: #E2D1C3 ;"
+          *ngIf="matiere==2">
+          <ion-card-header>
+            <b>Verre Polycarbonate</b>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>
+              Le polycarbonate est une matière de synthèse qui a les particularités d'être très résistante aux chocs et
+              très légère.
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 2600 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 4000 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixMatiere(2)" *ngIf="matiere!=2">
+          <ion-card-header>
+            <b>Verre Polycarbonate</b>
+          </ion-card-header>
+
+          <ion-card-content>
+            <p>
+              Le polycarbonate est une matière de synthèse qui a les particularités d'être très résistante aux chocs et
+              très légère.
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 2600 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 4000 Da</p>
+          </ion-card-content>
+        </ion-card>
+
+
+      </ion-list>
+    </ion-slide>
+    <!--Page Matiére FIN-->
+
+    <!--Page Marque -->
+    <ion-slide>
+        <ion-fab top left>
+            <button ion-fab (click)="prev()" style="background-color:#000000; width:40px; height:40px;" > <ion-icon name="arrow-back"></ion-icon></button>
+          </ion-fab>
+      <h1>Marque des verres</h1>
+      <button ion-button style= "background-color: #000000;">Total : {{devis}} Da</button>
+      <br><br><br><br>
+
+      <ion-list>
+        <ion-card class="lenscard" (click)="choixMarque(1)" style="background-color: #E2D1C3 ;" *ngIf="marque==1">
+          <ion-card-header>
+            <b> Novatis </b>
+          </ion-card-header>
+          <ion-card-content>
+              <p style="font-weight: bold;" *ngIf="simple">+ 0 Da</p>
+              <p style="font-weight: bold;" *ngIf="!simple">+ 0 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixMarque(1)" *ngIf="marque!=1">
+          <ion-card-header>
+            <b> Novatis </b>
+          </ion-card-header>
+          <ion-card-content>
+              <p style="font-weight: bold;" *ngIf="simple">+ 0 Da</p>
+              <p style="font-weight: bold;" *ngIf="!simple">+ 0 Da</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="lenscard" (click)="choixMarque(2)" style="background-color: #E2D1C3 ;" *ngIf="marque==2">
+          <ion-card-header>
+            <b> Essilor </b>
+          </ion-card-header>
+          <ion-card-content>
+              <p style="font-weight: bold;" *ngIf="simple">+ 8600 Da</p>
+              <p style="font-weight: bold;" *ngIf="!simple">+ 20.000 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixMarque(2)" *ngIf="marque!=2">
+          <ion-card-header>
+            <b> Essilor </b>
+          </ion-card-header>
+          <ion-card-content>
+              <p style="font-weight: bold;" *ngIf="simple">+ 8600 Da</p>
+              <p style="font-weight: bold;" *ngIf="!simple">+ 20.000 Da</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="lenscard" (click)="choixMarque(3)" style="background-color: #E2D1C3 ;" *ngIf="marque==3">
+          <ion-card-header>
+            <b> Zeiss </b>
+          </ion-card-header>
+          <ion-card-content>
+              <p style="font-weight: bold;" *ngIf="simple">+ 8600 Da</p>
+              <p style="font-weight: bold;" *ngIf="!simple">+ 20.000 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixMarque(3)" *ngIf="marque!=3">
+          <ion-card-header>
+            <b> Zeiss </b>
+          </ion-card-header>
+          <ion-card-content>
+              <p style="font-weight: bold;" *ngIf="simple">+ 8600 Da</p>
+              <p style="font-weight: bold;" *ngIf="!simple">+ 20.000 Da</p>
+          </ion-card-content>
+        </ion-card>
+
+      </ion-list>
+    </ion-slide>
+    <!--Page Marque FIN-->
+
+    <!--Page Indice -->
+    <ion-slide>
+        <ion-fab top left>
+            <button ion-fab (click)="prev()" style="background-color:#000000; width:40px; height:40px;" > <ion-icon name="arrow-back"></ion-icon></button>
+          </ion-fab>
+      <h1>Indice des verres</h1>
+      <button ion-button style= "background-color: #000000;">Total : {{devis}} Da</button>
+      <br>
+
+
+      <ion-list>
+        <ion-card class="lenscard" (click)="choixIndice(1)" style="background-color: #E2D1C3 ;" *ngIf="indice==1">
+          <ion-card-header>
+            <b> Indice 1.50 </b>
+          </ion-card-header>
+          <ion-card-content>
+            <p>
+              Verres standards
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 0 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 0 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixIndice(1)" *ngIf="indice!=1">
+          <ion-card-header>
+            <b> Indice 1.50 </b>
+          </ion-card-header>
+          <ion-card-content>
+            <p>
+              Verres standards
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 0 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 0 Da</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="lenscard" (click)="choixIndice(2)" style="background-color: #E2D1C3 ;" *ngIf="indice==2">
+          <ion-card-header>
+            <b> Indice 1.60 </b>
+          </ion-card-header>
+          <ion-card-content>
+            <p>
+              Verres minces
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 10.600 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 12.000 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixIndice(2)" *ngIf="indice!=2">
+          <ion-card-header>
+            <b> Indice 1.60 </b>
+          </ion-card-header>
+          <ion-card-content>
+            <p>
+              Verres minces
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 10.600 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 12.000 Da</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="lenscard" (click)="choixIndice(3)" style="background-color: #E2D1C3 ;" *ngIf="indice==3">
+          <ion-card-header>
+            <b> Indice 1.67 </b>
+          </ion-card-header>
+          <ion-card-content>
+            <p>
+              Verres trés minces
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 16.600 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 20.000 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixIndice(3)" *ngIf="indice!=3">
+          <ion-card-header>
+            <b> Indice 1.67 </b>
+          </ion-card-header>
+          <ion-card-content>
+            <p>
+              Verres trés minces
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 16.600 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 20.000 Da</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card class="lenscard" (click)="choixIndice(4)" style="background-color: #E2D1C3 ;" *ngIf="indice==4">
+          <ion-card-header>
+            <b> Indice 1.74 </b>
+          </ion-card-header>
+          <ion-card-content>
+            <p>
+              Verres ultra minces
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 30.600 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 36.000 Da</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="lenscard" (click)="choixIndice(4)" *ngIf="indice!=4">
+          <ion-card-header>
+            <b> Indice 1.74 </b>
+          </ion-card-header>
+          <ion-card-content>
+            <p>
+              Verres ultra minces
+            </p>
+            <p style="font-weight: bold;" *ngIf="simple">+ 30.600 Da</p>
+            <p style="font-weight: bold;" *ngIf="!simple">+ 36.000 Da</p>
+          </ion-card-content>
+        </ion-card>
+
+
+
+      </ion-list>
+    </ion-slide>
+    <!--Page Indice FIN-->
+
+    <!--Page Couleur -->
+    <ion-slide>
+        <ion-fab top left>
+            <button ion-fab (click)="prev()" style="background-color:#000000; width:40px; height:40px;" > <ion-icon name="arrow-back"></ion-icon></button>
+          </ion-fab>
+      <h1>Teintes des verres</h1>
+      <button ion-button style= "background-color: #000000;">Total : {{devis}} Da</button>
+      <br><br><br>
+
+
+      <ion-list id="colorlist">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-4>
+                <button ion-fab (click)="choixCouleur(2)" style="background-color:#452F2D; display : block; margin : auto; height:80px; width:80px; "></button>
+            </ion-col>
+            <ion-col col-4>
+                <button ion-fab (click)="choixCouleur(3)" style="background-color: #474749; display : block; margin : auto; height:80px; width:80px;"></button>
+            </ion-col>
+            <ion-col col-4>
+                <button ion-fab (click)="choixCouleur(4)" style="background-color: #1C3A34; display : block; margin : auto; height:80px; width:80px;"></button>
+              </ion-col>
+          </ion-row>
+          <br><br>
+          <ion-row>
+              <ion-col col-4>
+                  <button ion-fab (click)="choixCouleur(5)" style="background-color: #A99115; display : block; margin : auto; height:80px; width:80px;"></button>
+              </ion-col>
+              <ion-col col-4>
+                  <button ion-fab (click)="choixCouleur(6)" style="background-color: #9F5A4A; display : block; margin : auto; height:80px; width:80px;"></button>
+              </ion-col>
+              <ion-col col-4>
+                  <button ion-fab (click)="choixCouleur(7)" style="background-color: #852B43; display : block; margin : auto; height:80px; width:80px;"></button>
+                </ion-col>
+            </ion-row>
+            <br><br>
+            <ion-row>
+                <ion-col col-4>
+                    <button ion-fab (click)="choixCouleur(8)" style="background-color: #07548E; display : block; margin : auto; height:80px; width:80px;"></button>
+                </ion-col>
+                <ion-col col-4>
+                    <button ion-fab (click)="choixCouleur(9)" style="background-color: #412D50; display : block; margin : auto; height:80px; width:80px;"></button>
+                </ion-col>
+                <ion-col col-4>
+                    <button ion-fab (click)="choixCouleur(1)" style="background-color: white; display : block; margin : auto; height:80px; width:80px;"></button>
+                  </ion-col>
+              </ion-row>
+
+        </ion-grid>
+
+      </ion-list>
+     
+    </ion-slide>
+    <!--Page Traitement FIN-->
+
+ <!--Page Traitement-->
+ <ion-slide>
+    <h1>Traitement</h1>
+    <button ion-button style= "background-color: #000000;">Total : {{devis}} Da</button>
+    <br>
+
+
+   
+          <ion-card class="lenscardT" (click)="choixTraitement(1)" style="background-color: #E2D1C3;" *ngIf="hc">
+            <ion-card-header>
+              <b> Traitement HC </b>
+            </ion-card-header>
+            <ion-card-content>
+              <p>
+                Traitement qui durcit le verre.
+              </p>
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="lenscardT" (click)="choixTraitement(1)" *ngIf="!hc">
+            <ion-card-header>
+              <b> Traitement HC </b>
+            </ion-card-header>
+            <ion-card-content>
+              <p>
+                Traitement qui durcit le verre.
+              </p>
+            </ion-card-content>
+          </ion-card>
+        
+
+       
+          <ion-card class="lenscardT" (click)="choixTraitement(2)" style="background-color: #E2D1C3;" *ngIf="hmc">
+            <ion-card-header>
+              <b> Traitement HMC </b>
+            </ion-card-header>
+            <ion-card-content>
+              <p>
+                Traitement multi-couches(Anti-Reflets/Anti-Rayures/Incassable).
+              </p>
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="lenscardT" (click)="choixTraitement(2)" *ngIf="!hmc">
+            <ion-card-header>
+              <b> Traitement HMC </b>
+            </ion-card-header>
+            <ion-card-content>
+              <p>
+                Traitement multi-couches(Anti-Reflets/Anti-Rayures/Incassable).
+              </p>
+            </ion-card-content>
+          </ion-card>
+      
+          <ion-card class="lenscardT" (click)="choixTraitement(3)" style="background-color: #E2D1C3;" *ngIf="bb">
+            <ion-card-header>
+              <b> Traitement BB </b>
+            </ion-card-header>
+            <ion-card-content>
+              <p>
+                Traitement anti lumiére bleu.
+              </p>
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="lenscardT" (click)="choixTraitement(3)" *ngIf="!bb">
+            <ion-card-header>
+              <b> Traitement BB </b>
+            </ion-card-header>
+            <ion-card-content>
+              <p>
+                Traitement anti lumiére bleu.
+              </p>
+            </ion-card-content>
+          </ion-card>
+        
+          <ion-card class="lenscardT" (click)="choixTraitement(4)" style="background-color: #E2D1C3;" *ngIf="trans">
+            <ion-card-header>
+              <b> Traitement Transition </b>
+            </ion-card-header>
+            <ion-card-content>
+              <p>
+                Verres photochromiques qui s'adaptent à la luminosité.
+              </p>
+            </ion-card-content>
+          </ion-card>
+          <ion-card class="lenscardT" (click)="choixTraitement(4)" *ngIf="!trans">
+            <ion-card-header>
+              <b> Traitement Transition </b>
+            </ion-card-header>
+            <ion-card-content>
+              <p>
+                Verres photochromiques qui s'adaptent à la luminosité.
+              </p>
+            </ion-card-content>
+          </ion-card>
+       
+
+
+
+    <button ion-button (click)="prev()">Précédent</button>
+    <button ion-button (click)="end()">Terminer</button>
+  </ion-slide>
+  <!--Page Traitement FIN-->
+
+
+    <!--Page Devis-->
+    <ion-slide>
+        <ion-fab top left>
+            <button ion-fab (click)="prev()" style="background-color:#000000; width:40px; height:40px;" > <ion-icon name="arrow-back"></ion-icon></button>
+          </ion-fab>
+      <h1>Vos Verres correcteurs</h1> <br>
+      <ion-list>
+
+
+        <ion-card class="carddevis">
+          <ion-card-header>
+            Devis
+          </ion-card-header>
+          <ion-card-content>
+              <br>
+           
+                    
+                  <ion-img width="100" height="50" src="assets/imgs/glass.jpg"></ion-img>
+                  <br>
+                  <p>
+                    <b id="devis">{{devis}} Da</b>
+                  </p>
+
+                  <ion-list id="listedevis">
+                    <li><b>Focalité : </b>{{recap[6]}}</li>
+                    <li><b>Matiére : </b>{{recap[7]}}</li>
+                    <li><b>Marque : </b>{{recap[8]}}</li>
+                    <li><b>Indice : </b>{{recap[9]}}</li>
+                    <li><b>Traitement HC : </b>{{recap[10]}}</li>
+                    <li><b>Traitement HMC : </b>{{recap[11]}}</li>
+                    <li><b>Traitement BB : </b>{{recap[12]}}</li>
+                    <li><b>Traitement Trans : </b>{{recap[13]}}</li>
+                    <li><b>Couleur :</b><button ion-fab [ngStyle]="{'background-color': color}" style="display : block; margin : auto;"></button></li>
+                  </ion-list>
+            
+          </ion-card-content>
+        </ion-card>
+
+      </ion-list>
+      <button ion-button (click)="restart()">Recommencer</button>
+
+    </ion-slide>
+    <!--Page Devis FIN-->
+
+  </ion-slides>
+
+</ion-content>

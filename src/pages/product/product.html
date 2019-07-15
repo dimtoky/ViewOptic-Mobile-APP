@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{productData['Brand']['bname']}}  {{productData['pname']}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+
+  <ion-card >
+      <ion-card-title  class="contentCard" style="text-align: center;">
+          <span class="brand">{{productData['Brand']['bname']}}</span><br>
+        {{productData['pname']}}
+        </ion-card-title>
+    <ion-slides>
+      <ion-slide>
+          <img  src="http://viewoptic.servehttp.com:4380/api/products/img/{{productData['imgPath1']}}"/>
+      </ion-slide>
+      <ion-slide>
+          <img  src="http://viewoptic.servehttp.com:4380/api/products/img/{{productData['imgPath2']}}"/>
+      </ion-slide>
+      <ion-slide>
+          <img  src="http://viewoptic.servehttp.com:4380/api/products/img/{{productData['imgPath3']}}"/>
+      </ion-slide>
+    </ion-slides>
+    <ion-card-content class="contentCard" style="text-align: center;">
+     
+        <p>
+           <span class="price">{{productData['price']}}</span>  Da
+        </p>
+        <p>
+            <span class="title"> Forme :</span>  {{productData['forme']}}
+        </p>
+        <p>
+            <span class="title">  Sexe :</span>  {{productData['gender']}}
+        </p>
+        <p>
+            <span class="title">  Matiére :</span>  {{productData['material']}}
+        </p>
+        <p>
+            <span class="title">  Taille :</span>  {{productData['size']}}
+        </p>
+      <p>
+          <span class="title">  Déscription :</span> <br> 
+        {{productData['description']}}
+      </p>
+      <button ion-button (click)="preorder()">Réserver</button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

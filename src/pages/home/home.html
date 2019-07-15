@@ -1,14 +1,43 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content>
+    <br>
+   
+        <img height="200" style="margin: auto; display: block" src="assets/logoC.svg"/>
+      
+ 
+      <ion-slides style="height:40%; display: block; position:absolute;  top:35%;   " >
+
+          <ion-slide>
+            <img width="100%" src="../assets/imgs/main_slider_1.jpg"/>
+          </ion-slide>
+        
+          <ion-slide>
+              <img src="../assets/imgs/main_slider_2.jpg"/>
+          </ion-slide>
+        
+          <ion-slide>
+              <img src="../assets/imgs/main_slider_3.jpg"/>
+          </ion-slide>
+        
+        </ion-slides>
+   
+        
+           
+           <div style="position: absolute; bottom: 0; width: 100%;" >
+            <ion-row>
+                <ion-col col-6 no-padding>
+                   
+                                <img height="150" (click)="configButton()" style="margin: auto; display: block;" src="assets/programateur.png"/>  
+                                     
+                </ion-col>
+                <ion-col col-6 no-padding>
+                   
+                    <img height="150" (click)="catalogButton()" style="margin: auto; display: block;" src="assets/cart.png"/>  
+                         
+    </ion-col>
+               
+            </ion-row>
+        </div>
+      
 </ion-content>

@@ -1,0 +1,25 @@
+page-product {
+    ion-slides{
+        height: 200px;
+    }
+
+    .contentCard{
+        background-color:white ;
+        font-weight: bold;
+    }
+
+    .price{
+        color: rgb(150, 114, 88);
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .title{
+        font-weight: bold;
+    }
+
+    .brand{
+        font-size: 20px;
+    }
+
+}

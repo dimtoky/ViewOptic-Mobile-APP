@@ -1,0 +1,30 @@
+page-lens-maker {
+     
+
+    .scroll-content{
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+        }
+
+        .swiper-slide {
+            overflow-y: scroll;
+            display: block;
+        }
+
+        #devis{
+            font-size: 25px;
+            font-weight: bolder;
+        }
+
+        ion-card-header{
+            background-color: #D6C0B0;
+            font-weight: 900;
+        }
+
+      .carddevis{
+
+        display: block;
+        height: 350px;
+      }
+    
+}
